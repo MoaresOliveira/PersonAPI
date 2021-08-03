@@ -34,7 +34,7 @@ public class PersonDTO {
     @CPF
     private String cpf;
 
-    private LocalDateTime birthDate;
+    private String birthDate;
 
     @Valid
     @NotEmpty
