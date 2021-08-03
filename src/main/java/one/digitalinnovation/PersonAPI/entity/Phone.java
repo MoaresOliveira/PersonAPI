@@ -6,8 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import one.digitalinnovation.PersonAPI.enums.PhoneType;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Data
 @Builder
@@ -17,9 +16,13 @@ import javax.persistence.Id;
 public class Phone {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
     private PhoneType type;
 
+    @Column(nullable = false)
     private String number;
 }
