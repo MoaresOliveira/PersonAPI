@@ -4,6 +4,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
 import one.digitalinnovation.PersonAPI.dto.request.PersonDTO;
+import one.digitalinnovation.PersonAPI.dto.request.UpdatePersonDTO;
 import one.digitalinnovation.PersonAPI.dto.response.MessageResponseDTO;
 import one.digitalinnovation.PersonAPI.exception.PersonNotFoundException;
 import one.digitalinnovation.PersonAPI.service.PersonService;
@@ -43,7 +44,7 @@ public class PersonController {
 
     @PutMapping("/{id}")
     @Operation(summary = "Update a person")
-    public MessageResponseDTO updateById(@PathVariable Long id,@RequestBody @Valid PersonDTO personDTO) throws PersonNotFoundException {
+    public MessageResponseDTO updateById(@PathVariable Long id,@RequestBody @Valid UpdatePersonDTO personDTO) throws PersonNotFoundException {
         return personService.updateById(id, personDTO);
     }
 
