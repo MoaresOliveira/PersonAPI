@@ -22,8 +22,7 @@ public class SwaggerConfig {
                 .version("v1.0.0")
                 .contact(new Contact()
                         .name("Moares Oliveira")
-                        .url("https://github.com/MoaresOliveira")
-                        .email("moaresoliveira@gmail.com"));
+                        .url("https://github.com/MoaresOliveira"));
         return info;
     }
 }
