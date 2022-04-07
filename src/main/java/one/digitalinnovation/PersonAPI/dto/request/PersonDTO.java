@@ -30,7 +30,7 @@ public class PersonDTO {
 
     @NotEmpty
     @CPF
-    private String cpf;
+    private String cpf = "123.456.789-10";
 
     private String birthDate;
 

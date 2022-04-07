@@ -3,7 +3,6 @@ package one.digitalinnovation.PersonAPI.service;
 import lombok.AllArgsConstructor;
 import one.digitalinnovation.PersonAPI.dto.mapper.PersonMapper;
 import one.digitalinnovation.PersonAPI.dto.request.PersonDTO;
-import one.digitalinnovation.PersonAPI.dto.request.UpdatePersonDTO;
 import one.digitalinnovation.PersonAPI.dto.response.MessageResponseDTO;
 import one.digitalinnovation.PersonAPI.entity.Person;
 import one.digitalinnovation.PersonAPI.exception.PersonNotFoundException;
@@ -41,7 +40,7 @@ public class PersonService {
         return personMapper.toDTO(person);
     }
 
-    public MessageResponseDTO updateById(Long id, UpdatePersonDTO personDTO) throws PersonNotFoundException {
+    public MessageResponseDTO updateById(Long id, PersonDTO personDTO) throws PersonNotFoundException {
         verifyIfExists(id);
         Person person = personMapper.toModel(personDTO);
         Person updatedPerson = personRepository.save(person);
